@@ -65,6 +65,3 @@ O objetivo deste projeto é aprimorar as práticas adquiridas durante o desenvol
 - `src/test/java`: Contém os testes unitários do projeto.
 - `resources`: Contém os arquivos de configuração (ex: `application.properties`).
 
-
-
-
