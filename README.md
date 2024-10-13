@@ -65,10 +65,6 @@ O objetivo deste projeto é aprimorar as práticas adquiridas durante o desenvol
 - `src/test/java`: Contém os testes unitários do projeto.
 - `resources`: Contém os arquivos de configuração (ex: `application.properties`).
 
-## Contribuição
 
-Sinta-se à vontade para contribuir com melhorias, correções e sugestões!
 
-## Licença
 
-Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
