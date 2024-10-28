@@ -2,7 +2,7 @@ package com.M.taskpro.taskpro.DTO;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class UserDTO {
+public class UserNewDTO {
 
 	@NotBlank
 	private String name;

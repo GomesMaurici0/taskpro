@@ -1,6 +1,6 @@
 package com.M.taskpro.taskpro.controller;
 
-import com.M.taskpro.taskpro.DTO.UserDTO;
+import com.M.taskpro.taskpro.DTO.UserNewDTO;
 import com.M.taskpro.taskpro.Entity.EntityUser;
 import com.M.taskpro.taskpro.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class UserController {
 	UserService service;
 
 	@PostMapping("/user")
-	public ResponseEntity<EntityUser> post (@RequestBody  UserDTO dto){
+	public ResponseEntity<EntityUser> post (@RequestBody UserNewDTO dto){
 		EntityUser creatUser = service.postUser(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(creatUser);
 	}

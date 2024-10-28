@@ -1,9 +1,9 @@
 package com.M.taskpro.taskpro.service;
 
-import com.M.taskpro.taskpro.DTO.UserDTO;
-import com.M.taskpro.taskpro.Entity.EntityEnterprise;
+import com.M.taskpro.taskpro.DTO.UserNewDTO;
+import com.M.taskpro.taskpro.Entity.EntityCompany;
 import com.M.taskpro.taskpro.Entity.EntityUser;
-import com.M.taskpro.taskpro.repository.ManagementEnterpriseRepository;
+import com.M.taskpro.taskpro.repository.ManagementCompanyRepository;
 import com.M.taskpro.taskpro.repository.ManagementUserRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +20,9 @@ public class UserService {
 	ManagementUserRepository userRepository;
 
 	@Autowired
-	ManagementEnterpriseRepository enterpriseRepository;
+	ManagementCompanyRepository enterpriseRepository;
 
-	public EntityUser postUser(UserDTO userDTO){
+	public EntityUser postUser(UserNewDTO userDTO){
 		if (userRepository.existsByUsername(userDTO.getUsername())){
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuario ja existente");
 		}
@@ -31,14 +31,5 @@ public class UserService {
 		return userRepository.save(entity);
 	}
 
-	public void assignUsertoEnterprise (UUID userId, Long enterpriseId){
-		EntityUser user = userRepository.findById(userId).
-				orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado."));
 
-		EntityEnterprise enterprise = enterpriseRepository.findById(enterpriseId).
-				orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Empresa não encontrada."));
-
-		user.setEmpresa(enterprise);
-		userRepository.save(user);
-	}
 }

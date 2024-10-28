@@ -6,10 +6,10 @@ import lombok.Data;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+
 @Entity
 @Table(name = "empresa_table")
-public class EntityEnterprise {
+public class EntityCompany {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +18,7 @@ public class EntityEnterprise {
 	@Column( nullable = true)
 	private String name;
 
-	@Column(nullable = true, unique = true)
+	@Column(nullable = false, unique = true)
 	private String username;
 
 	@Column(nullable = false)

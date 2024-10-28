@@ -25,7 +25,7 @@ public class EntityUser {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "empresa_id")
-	private EntityEnterprise empresa;
+	private EntityCompany empresa;
 
 	public UUID getId() {
 		return id;
@@ -39,11 +39,11 @@ public class EntityUser {
 		this.password = password;
 	}
 
-	public EntityEnterprise getEmpresa() {
+	public EntityCompany getEmpresa() {
 		return empresa;
 	}
 
-	public void setEmpresa(EntityEnterprise empresa) {
+	public void setEmpresa(EntityCompany empresa) {
 		this.empresa = empresa;
 	}
 
